@@ -1,0 +1,15 @@
+.text-center, a.title{
+    color: black !important;
+  }
+  
+  .text-center,   a.title:hover{
+    color: black !important;
+    text-decoration: underline;
+    text-decoration-color: var(--text-color);
+  }
+
+
+.my-height{
+  height: 33vh !important;
+
+}

@@ -1,0 +1,4138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="오키도키">
+    <meta name="author" content="오키도키 승원">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <meta property="og:title" content="레벨테스트 | 에듀슨 잉글리쉬">
+    <meta property="og:description" content="레벨테스트 | 에듀슨 잉글리쉬">
+    <meta property="og:image" content="images/kakao.png">
+    <title>레벨테스트 | 에듀슨 잉글리쉬</title>
+    <!-- Bootstrap CSS -->
+   
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+  
+    <!-- Formantic ui  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+
+ 
+    <link rel="icon" href="/images/favicon.ico" />
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+
+	<link rel="stylesheet" href="/css/leveltest.css">
+	<!-- <script src="/js/leveltest.js"></script> -->
+
+<%- include leveltest_js.ejs %>
+</head>
+<body>
+
+<script>
+var comment;
+function printdiv(){
+        var headstr = "<html><head><title>Booking Details</title><link rel='stylesheet' href='leveltest.css'></head><body>";
+        var footstr = "</body></html>";
+        var element = document.getElementById("print_div");
+        var oldstr = document.body.innerHTML;
+        comment = $("#comment_data").val();
+        $("#printhelper").html(comment);
+        $("#result").addClass("print");
+
+        $("#result").find(".btn_wrap").remove();
+        var newstr = element.innerHTML;
+        document.body.innerHTML = headstr+newstr+footstr;
+        window.print();
+        document.body.innerHTML = oldstr;
+        $("#comment_data").val(comment);
+}
+window.addEventListener("afterprint", printAfter);
+function printAfter() {
+    $("#result").removeClass("print");
+}
+</script>
+
+	<!-- <input type="hidden" name="testType" id="testType" value=""> -->
+	<div id="levelTest" class = "bg-warning h-100">
+		<div class="container bg-white">
+			
+			<div class="test_index on">
+				<div class = "ui piled segment">
+				<h2 class="ui header">
+					EDUSON LEVEL TEST <br/>
+				</h2>
+					<div class="sub header">
+						<ul>
+							<li>🟡 LEVEL TEST는 공부한 기간에 따라 자동으로 문제의 난이도가 정해집니다.</li>
+							<li>🟡 각 테스트는 리스닝 10개, 리딩 20개, 총 30 문항이 출제되며 리스닝 테스트는 꼭 이어폰을 사용하셔야 합니다.</li>
+							<li>🟡 테스트 시간은 25-30분 정도이며 점수가 80점이 나올 경우, 한 단계 높은 테스트를 선택하면 좀더 정확한 레벨을 알 수 있습니다. </li>
+							<li>🟡 테스트는 마지막 문제까지 풀어야 결과가 나옵니다. </li>		
+						</ul>
+
+					</div>
+				
+				</div>
+
+<div>
+
+	<div class="list-group">
+		<a href="#" onclick="leveltest.go('E');return false;" class="list-group-item list-group-item-action mb-3 bg-warning">
+			<div class="d-flex w-100 justify-content-between ">
+			  <h5 class="mb-1">Level 5</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">5years~</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+		<a href="#" onclick="leveltest.go('D');return false;" class="list-group-item list-group-item-action mb-3" style = "background-color: #ffcd39;">
+			<div class="d-flex w-100 justify-content-between">
+			  <h5 class="mb-1">Level 4</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">4 ~ 5years</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+		<a href="#" onclick="leveltest.go('C');return false;" class="list-group-item list-group-item-action mb-3" style = "background-color: #ffda6a;">
+			<div class="d-flex w-100 justify-content-between">
+			  <h5 class="mb-1">Level 3</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">3~4years</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+		<a href="#" onclick="leveltest.go('B');return false;" class="list-group-item list-group-item-action mb-3" style = "background-color: #ffe69c;">
+			<div class="d-flex w-100 justify-content-between">
+			  <h5 class="mb-1">Level 2</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">1~2years</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+		  <a href="#" onclick="leveltest.go('A');return false;" class="list-group-item list-group-item-action mb-3" style = "background-color: #fff3cd;">
+			<div class="d-flex w-100 justify-content-between">
+			  <h5 class="mb-1">Level 1</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">~ 1years</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+	  </div>
+
+				<!-- <div class="start_box"> -->
+		
+				</div>
+				<!-- <div class="info_list">
+				
+				</div> -->
+			</div>
+
+			<div id="qA">
+				<div id="A_1" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>1</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeA">
+						<div class="question">
+							<p>Listen and choose.</p>
+							<div class="img">
+								<span style="background-image:url('http://www.ebricks.co.kr/leveltest/images/test_img/A/1-1-pig.jpg')"></span>
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/1-2-wig.jpg)"></span>
+							</div>
+							<a href="#" class="btn_sound" title="A-1.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span>-am</span>
+								<input type="radio" name="A_1">
+							</label>
+							<label class="inlineA">
+								<span>-ig</span>
+								<input type="radio" name="A_1">
+							</label>
+							<label class="inlineA">
+								<span>-ox</span>
+								<input type="radio" name="A_1">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="A_2" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>2</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeA">
+						<div class="question">
+							<p>Listen and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/2-1.jpg)"></span>
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/2-2.jpg)"></span>
+							</div>
+							<a href="#" class="btn_sound" title="A-2.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span>-am</span>
+								<input type="radio" name="A_2">
+							</label>
+							<label class="inlineA">
+								<span>-ig</span>
+								<input type="radio" name="A_2">
+							</label>
+							<label class="inlineA">
+								<span>-ox</span>
+								<input type="radio" name="A_2">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="A_3" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>3</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeA">
+						<div class="question">
+							<p>Listen and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/3-1-ham.jpg)"></span>
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/3-1-jam.jpg)"></span>
+							</div>
+							<a href="#" class="btn_sound" title="A-3.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span>-am</span>
+								<input type="radio" name="A_3">
+							</label>
+							<label class="inlineA">
+								<span>-ig</span>
+								<input type="radio" name="A_3">
+							</label>
+							<label class="inlineA">
+								<span>-ox</span>
+								<input type="radio" name="A_3">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="A_4" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>4</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeB">
+						<div class="question">
+							<p>Listen and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/4-1-mail.jpg)"></span>
+								<span class="txt">-ail</span>
+							</div>
+							<a href="#" class="btn_sound" title="A-4.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/4-2-snail.jpg)"></span>
+								<input type="radio" name="A_4">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/4-3-pea.jpg)"></span>
+								<input type="radio" name="A_4">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="A_5" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>5</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeB">
+						<div class="question">
+							<p>Listen and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/5-1-monkey.jpg)"></span>
+								<span class="txt">-ey</span>
+							</div>
+							<a href="#" class="btn_sound" title="A-5.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/5-2-mop.jpg)"></span>
+								<input type="radio" name="A_5">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/5-3-key.jpg)"></span>
+								<input type="radio" name="A_5">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="A_6" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>6</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeB">
+						<div class="question">
+							<p>Listen and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/6-1-goat.jpg)"></span>
+								<span class="txt">-oat</span>
+							</div>
+							<a href="#" class="btn_sound" title="A-6.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/6-2-bread.jpg)"></span>
+								<input type="radio" name="A_6">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/6-3-coat.jpg)"></span>
+								<input type="radio" name="A_6">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="A_7" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>7</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<a href="#" class="btn_sound" title="A-7.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/7-1hamster.jpg)"></span>
+								<input type="radio" name="A_7">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/7-2rabbit.jpg)"></span>
+								<input type="radio" name="A_7">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/7-3.jpg)"></span>
+								<input type="radio" name="A_7">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="A_8" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>8</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<a href="#" class="btn_sound" title="A-8.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/8-1windy.jpg)"></span>
+								<input type="radio" name="A_8">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/8-2foggy.jpg)"></span>
+								<input type="radio" name="A_8">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/8-3sunny.jpg)"></span>
+								<input type="radio" name="A_8">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="A_9" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>9</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents">
+						<div class="question">
+							<p>Listen and choose the best response.</p>
+							<a href="#" class="btn_sound" title="A-9.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineB">
+								<input type="radio" name="A_9">
+								<span class="txt">(A)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="A_9">
+								<span class="txt">(B)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="A_9">
+								<span class="txt">(C)</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="A_10" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>10</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents">
+						<div class="question">
+							<p>Listen and choose the best response.</p>
+							<a href="#" class="btn_sound" title="A-10.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineB">
+								<input type="radio" name="A_10">
+								<span class="txt">(A)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="A_10">
+								<span class="txt">(B)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="A_10">
+								<span class="txt">(C)</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_11" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>11</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/11.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="txt">fish</span>
+								<input type="radio" name="A_11">
+							</label>
+							<label class="inlineA">
+								<span class="txt">fox</span>
+								<input type="radio" name="A_11">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_12" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>12</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/12.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="txt">skate</span>
+								<input type="radio" name="A_12">
+							</label>
+							<label class="inlineA">
+								<span class="txt">spider</span>
+								<input type="radio" name="A_12">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_13" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>13</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/13.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="txt">ball</span>
+								<input type="radio" name="A_13">
+							</label>
+							<label class="inlineA">
+								<span class="txt">glove</span>
+								<input type="radio" name="A_13">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_14" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>14</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/14.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="txt">bottle</span>
+								<input type="radio" name="A_14">
+							</label>
+							<label class="inlineA">
+								<span class="txt">water</span>
+								<input type="radio" name="A_14">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_15" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>15</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Read and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/15.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineC">
+								<input type="radio" name="A_15">
+								<span class="txt">I like apples.</span>
+							</label>
+							<label class="inlineC">
+								<input type="radio" name="A_15">
+								<span class="txt">I like bananas.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_16" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>16</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Read and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/16.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineC">
+								<input type="radio" name="A_16">
+								<span class="txt">The hat is for Kim.</span>
+							</label>
+							<label class="inlineC">
+								<input type="radio" name="A_16">
+								<span class="txt">The mitten is for Kim.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_17" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>17</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Read and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/17.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineC">
+								<input type="radio" name="A_17">
+								<span class="txt">My boots are dirty.</span>
+							</label>
+							<label class="inlineC">
+								<input type="radio" name="A_17">
+								<span class="txt">My boots are new.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_18" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>18</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Read and choose.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/A/18.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineC">
+								<input type="radio" name="A_18">
+								<span class="txt">He is sleeping.</span>
+							</label>
+							<label class="inlineC">
+								<input type="radio" name="A_18">
+								<span class="txt">He is eating.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_19" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>19~22</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeE">
+						<div class="multy_question">
+							<p>Choose the correct answers.</p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">19</span><span class="border"></span>are ready to play music.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_19">
+										<span class="txt">She</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_19">
+										<span class="txt">I</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_19">
+										<span class="txt">We</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">20</span>A horse<span class="border"></span>four legs.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_20">
+										<span class="txt">has</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_20">
+										<span class="txt">have</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_20">
+										<span class="txt">is</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">21</span>It<span class="border"></span>in the trash can.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_21">
+										<span class="txt">am</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_21">
+										<span class="txt">is</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_21">
+										<span class="txt">are</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">22</span><span class="border"></span>books are on the desk.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_22">
+										<span class="txt">A</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_22">
+										<span class="txt">Many</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_22">
+										<span class="txt">Much</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_20" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>23~26</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Choose the correct answers.</p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">23</span>There is<span class="border"></span>cat on the roof.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_23">
+										<span class="txt">a</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_23">
+										<span class="txt">many</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">24</span>I<span class="border"></span>the walls orange.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_24">
+										<span class="txt">play</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_24">
+										<span class="txt">paint</span>
+									</label>
+				
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">25</span>He<span class="border"></span>ginger bread.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_25">
+										<span class="txt">bakes</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_25">
+										<span class="txt">bake</span>
+									</label>
+				
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">26</span>Are<span class="border"></span>hungry?</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_26">
+										<span class="txt">she</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_26">
+										<span class="txt">they</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				
+				<div id="A_21" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>27~28</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage. Then choose the correct answers.</p>
+							<div class="maintxt">
+								We look for _____________________ at the park.<br>
+								Jake sees five ants. <br>
+								Dan sees two beetles.<br>
+								Cindy sees four ladybugs.<br>
+								Kim sees on butterfly.<br>
+								Roy sees three bees.<br>
+								Uh oh! The bees see Roy.<br>
+								Roy runs away! 
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">27</span>Choose the correct word to fill in the blank.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_27">
+										<span class="txt">bugs</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_27">
+										<span class="txt">fish</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_27">
+										<span class="txt">vegetables</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">28</span>Cindy sees four<span class="border"></span>.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_28">
+										<span class="txt">ants</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_28">
+										<span class="txt">beetles</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_28">
+										<span class="txt">ladybugs</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="A_22" class="test_wrap">
+					<h2>LEVEL TEST 1
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>29~30</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage. Then choose the correct answers.</p>
+							<div class="maintxt">
+								Will is lost in a dinosaur museum.<br>
+								Will looks at a strange dinosaur.<br>
+								It has a big sail.<br>
+								It growls at Will.<br>
+								Will looks at a scary dinosaur.<br>
+								It has many teeth.<br>
+								It blinks.<br>
+								They are ______________________!<br>
+								They chase Will.<br>
+								Run, Will, run!
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">29</span>Where is Will? </div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_29">
+										<span class="txt">in a forest</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_29">
+										<span class="txt">in a museum</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_29">
+										<span class="txt">in a theater </span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">30</span>Choose the correct word to fill in the blank.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="A_30">
+										<span class="txt">happy</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_30">
+										<span class="txt">dead</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="A_30">
+										<span class="txt">alive</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next last"><span>NEXT</span></a>
+					</div>
+				</div>
+					
+				<div id="A_last" class="test_last">
+					<h1>LEVEL 1 테스트 결과</h1>
+					<p>모든 테스트가 끝났습니다. 아래 버튼을 눌러 결과를 확인하시기 바랍니다. </p>
+					<a href="#" class="btn_result"><span>확인</span></a>
+				</div>
+			</div>
+
+			<div id="qB">
+				<div id="B_1" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>1</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<a href="#" class="btn_sound" title="B-1.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/1-1.jpg)"></span>
+								<input type="radio" name="B_1">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/1-2.jpg)"></span>
+								<input type="radio" name="B_1">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/1-3.jpg)"></span>
+								<input type="radio" name="B_1">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="B_2" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>2</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<a href="#" class="btn_sound" title="B-2.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/2-1.jpg)"></span>
+								<input type="radio" name="B_2">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/2-2.jpg)"></span>
+								<input type="radio" name="B_2">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/2-3.jpg)"></span>
+								<input type="radio" name="B_2">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="B_3" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>3</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents">
+						<div class="question">
+							<p>Listen and check the best response. </p>
+							<a href="#" class="btn_sound" title="B-3.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineB">
+								<input type="radio" name="B_3">
+								<span class="txt">(A)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="B_3">
+								<span class="txt">(B)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="B_3">
+								<span class="txt">(C)</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="B_4" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>4</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents">
+						<div class="question">
+							<p>Listen and check the best response.</p>
+							<a href="#" class="btn_sound" title="B-4.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineB">
+								<input type="radio" name="B_4">
+								<span class="txt">(A)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="B_4">
+								<span class="txt">(B)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="B_4">
+								<span class="txt">(C)</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_5" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>5</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents">
+						<div class="question">
+							<p>Listen and check the best response.</p>
+							<a href="#" class="btn_sound" title="B-5.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineD">
+								<input type="radio" name="B_5">
+								<span class="txt">It has long legs.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="B_5">
+								<span class="txt">Yes, it does.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="B_5">
+								<span class="txt">It can run fast.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_6" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>6</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents">
+						<div class="question">
+							<p>Listen and check the best response. </p>
+							<a href="#" class="btn_sound" title="B-6.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineD">
+								<input type="radio" name="B_6">
+								<span class="txt">I like to play baseball.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="B_6">
+								<span class="txt">I play baseball four times a week.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="B_6">
+								<span class="txt">Yes, I do.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_7" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>7</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct answer to each question.</p>
+							<p class="innerq">What Kind of pet does the boy want?</p>
+							<a href="#" class="btn_sound" title="B-7.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/7-1.jpg)"></span>
+								<input type="radio" name="B_7">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/7-2.jpg)"></span>
+								<input type="radio" name="B_7">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/7-3.jpg)"></span>
+								<input type="radio" name="B_7">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_8" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>8</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct answer to each question.</p>
+							<p class="innerq">What does the girl do on Wednesday?</p>
+							<a href="#" class="btn_sound" title="B-8.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/8-1.jpg)"></span>
+								<input type="radio" name="B_8">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/8-2.jpg)"></span>
+								<input type="radio" name="B_8">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/8-3.jpg)"></span>
+								<input type="radio" name="B_8">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_9" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>9~10</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="question">
+							<p>Listen to the dialogue and choose the answer.</p>
+							<a href="#" class="btn_sound" title="B-9-10.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">9</span>The woman is looking for <span class="border"></span>.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_9">
+										<span class="txt">a skirt</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_9">
+										<span class="txt">a jacket</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_9">
+										<span class="txt">a shirt</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">10</span>How much is the orange shirt?</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_10">
+										<span class="txt">8 dollars</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_10">
+										<span class="txt">18 dollars</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_10">
+										<span class="txt">80 dollars</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="B_10" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>11</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look and check. </p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/11.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="txt">barn</span>
+								<input type="radio" name="B_11">
+							</label>
+							<label class="inlineA">
+								<span class="txt">blanket</span>
+								<input type="radio" name="B_11">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_11" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>12</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look and check. </p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/12.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="txt">spray</span>
+								<input type="radio" name="B_12">
+							</label>
+							<label class="inlineA">
+								<span class="txt">splash</span>
+								<input type="radio" name="B_12">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="B_12" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>13</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look and check. </p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/13.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="txt">smell</span>
+								<input type="radio" name="B_13">
+							</label>
+							<label class="inlineA">
+								<span class="txt">smile</span>
+								<input type="radio" name="B_13">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="B_13" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>14</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Read and check.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/14.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineC">
+								<input type="radio" name="B_14">
+								<span class="txt">He is waving to his friend.</span>
+							</label>
+							<label class="inlineC">
+								<input type="radio" name="B_14">
+								<span class="txt">They hug each other.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_14" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>15</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Read and check.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/15.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineC">
+								<input type="radio" name="B_15">
+								<span class="txt">They’re swimming in the lake.</span>
+							</label>
+							<label class="inlineC">
+								<input type="radio" name="B_15">
+								<span class="txt">They’re going to the bakery.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_15" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>16</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Read and check.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/16.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineC">
+								<input type="radio" name="B_16">
+								<span class="txt">We take a picture.</span>
+							</label>
+							<label class="inlineC">
+								<input type="radio" name="B_16">
+								<span class="txt">We play hide-and-seek.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_16" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>17</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Read and check.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/B/17.jpg)"></span>
+							</div>
+						</div>
+						<div class="answer">
+							<label class="inlineC">
+								<input type="radio" name="B_17">
+								<span class="txt">The dog barks at me.</span>
+							</label>
+							<label class="inlineC">
+								<input type="radio" name="B_17">
+								<span class="txt">The dog licks my cheeks.</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="B_17" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>18~21</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Choose the correct answer. </p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">18</span>The bird<span class="border"></span>in the sky.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_18">
+										<span class="txt">fly</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_18">
+										<span class="txt">files</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_18">
+										<span class="txt">flying</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">19</span>Here is<span class="border"></span>milk.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_19">
+										<span class="txt">many</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_19">
+										<span class="txt">any</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_19">
+										<span class="txt">some</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">20</span>Where<span class="border"></span>Tom eat lunch?</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_20">
+										<span class="txt">do</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_20">
+										<span class="txt">does</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_20">
+										<span class="txt">are</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">21</span>I put<span class="border"></span>in the box.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_21">
+										<span class="txt">they</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_21">
+										<span class="txt">them</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_21">
+										<span class="txt">their</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="B_18" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>22~25</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Choose the correct answer. </p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">22</span><span class="border"></span>is my sister.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_22">
+										<span class="txt">This</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_22">
+										<span class="txt">These</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">23</span>Tom<span class="border"></span>a kitten. Meow!</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_23">
+										<span class="txt">have</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_23">
+										<span class="txt">has</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">24</span>Our planet  is<span class="border"></span>Earth.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_24">
+										<span class="txt">calling</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_24">
+										<span class="txt">called</span>
+									</label>
+
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">25</span>This story is very<span class="border"></span>.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_25">
+										<span class="txt">interesting</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_25">
+										<span class="txt">interested</span>
+									</label>
+
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				
+				<div id="B_19" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>26~28</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage. Then choose the correct answer. </p>
+							<div class="maintxt">
+								I have a tomato seed, a pot, and dirt.<br>
+								I put the dirt in the pot.<br>
+								I put the tomato seed in the dirt.<br>
+								I pour water on the seed.<br>
+								The plant grows tomatoes.<br>
+								(A) Next, the tomatoes are red.<br>
+								(B) Then, the tomatoes are ready.<br>
+								(C) First, the tomatoes are green.<br>
+								Now I ________________ them. Yummy!
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">26</span>I pour<span class="border"></span>on the seed.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_26">
+										<span class="txt">dirt</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_26">
+										<span class="txt">water</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_26">
+										<span class="txt">leaves</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">27</span>Choose the correct word to fill in the blank.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_27">
+										<span class="txt">eat</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_27">
+										<span class="txt">draw</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_27">
+										<span class="txt">make</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">28</span>What is the correct order of (A), (B), and (C)?</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_28">
+										<span class="txt">(A)-(C)-(B)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_28">
+										<span class="txt">(B)-(C)-(A)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_28">
+										<span class="txt">(C)-(A)-(B)</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="B_20" class="test_wrap">
+					<h2>LEVEL TEST 2
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>29~30</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage. Then choose the correct answers.</p>
+							<div class="maintxt">
+								Today is Mom’s birthday.<br>
+								Emma hides presents around the house.<br>
+								“Mom, find your presents,” says Emma.<br>
+								Mom finds a birthday card in the cookie jar.<br>
+								Mom finds a red rose in a closet.<br>
+								“This is the best birthday present!” says Mom.
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">29</span>What does Emma hide?</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_29">
+										<span class="txt">cookies</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_29">
+										<span class="txt">presents</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_29">
+										<span class="txt">birthday cards</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">30</span>Where does Emma’s mom find a rose?</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="B_30">
+										<span class="txt">in a closet</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_30">
+										<span class="txt">in a cookie jar</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="B_30">
+										<span class="txt">in a birthday card</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next last"><span>NEXT</span></a>
+					</div>
+				</div>
+					
+				<div id="B_last" class="test_last">
+					<h1>LEVEL 2 테스트 결과</h1>
+					<p>모든 테스트가 끝났습니다. 아래 버튼을 눌러 결과를 확인하시기 바랍니다. </p>
+					<a href="#" class="btn_result"><span>확인</span></a>
+				</div>
+			</div>
+
+			<div id="qC">
+				<div id="C_1" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>1</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<a href="#" class="btn_sound" title="C-1.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/1-1.jpg)"></span>
+								<input type="radio" name="C_1">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/1-2.jpg)"></span>
+								<input type="radio" name="C_1">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="C_2" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>2</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<a href="#" class="btn_sound" title="C-2.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/2-1.jpg)"></span>
+								<input type="radio" name="C_2">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/2-2.jpg)"></span>
+								<input type="radio" name="C_2">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="C_3" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>3</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<a href="#" class="btn_sound" title="C-3.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/3-1.jpg)"></span>
+								<input type="radio" name="C_3">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/3-2.jpg)"></span>
+								<input type="radio" name="C_3">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				<div id="C_4" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>4</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<a href="#" class="btn_sound" title="C-4.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/4-1.jpg)"></span>
+								<input type="radio" name="C_4">
+							</label>
+							<label class="inlineA">
+								<span class="img" style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/4-2.jpg)"></span>
+								<input type="radio" name="C_4">
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_5" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>5~6</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeG">
+						<div class="question">
+							<p>Listen and check the best response. </p>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">5</span></div>
+								<a href="#" class="btn_sound" title="C-5.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_5">
+										<span class="txt">(A)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_5">
+										<span class="txt">(B)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_5">
+										<span class="txt">(C)</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">6</span></div>
+								<a href="#" class="btn_sound" title="C-6.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_6">
+										<span class="txt">(A)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_6">
+										<span class="txt">(B)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_6">
+										<span class="txt">(C)</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="C_6" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>7</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen to the dialogue and choose the correct answer.</p>
+							<a href="#" class="btn_sound" title="C-7.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+							<p class="innerq">What are the boy and the girl going to do tomorrow? </p>
+						</div>
+						<div class="answer">
+							
+							<label class="inlineD">
+								<input type="radio" name="C_7">
+								<span class="txt">go swimming </span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="C_7">
+								<span class="txt">go to the park</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="C_7">
+								<span class="txt">take a piano lesson</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_7" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>8</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen to the dialogue and choose the correct answer.</p>
+							<a href="#" class="btn_sound" title="C-8.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+							<p class="innerq">What is the teacher talking about?</p>
+						</div>
+						<div class="answer">
+							
+							<label class="inlineD">
+								<input type="radio" name="C_8">
+								<span class="txt">helping people</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="C_8">
+								<span class="txt">keeping the rules</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="C_8">
+								<span class="txt">getting along with others</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_8" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>9~10</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="question">
+							<p>Listen and choose the correct answers.</p>
+							<a href="#" class="btn_sound" title="C-9-10.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">9</span>What are they mainly talking about?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="C_9">
+										<span class="txt">What they study after school</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_9">
+										<span class="txt">What they want to be</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_9">
+										<span class="txt">What they are interested in</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">10</span>What does the girl do after school?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="C_10">
+										<span class="txt">She does her homework. </span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_10">
+										<span class="txt">She takes painting lessons.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_10">
+										<span class="txt">She plays computer games.</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="C_9" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>11</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look at the picture and choose the words.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/11.jpg)"></span>
+							</div>
+						</div>
+						<div class="mq_cell">
+							<div class="q" style="text-align:center;">The boy and his dad are at a<span class="border"></span>.</div>
+							<div class="answer">
+								<label class="inlineC">
+									<input type="radio" name="C_11">
+									<span class="txt">market</span>
+								</label>
+								<label class="inlineC">
+									<input type="radio" name="C_11">
+									<span class="txt">toy store</span>
+								</label>
+								<label class="inlineC">
+									<input type="radio" name="C_11">
+									<span class="txt">school</span>
+								</label>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_10" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>12</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look at the picture and choose the words.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/12.jpg)"></span>
+							</div>
+						</div>
+						<div class="mq_cell">
+							<div class="q" style="text-align:center;">I<span class="border"></span>milk into the glass.</div>
+							<div class="answer">
+								<label class="inlineC">
+									<input type="radio" name="C_12">
+									<span class="txt">drink</span>
+								</label>
+								<label class="inlineC">
+									<input type="radio" name="C_12">
+									<span class="txt">smell</span>
+								</label>
+								<label class="inlineC">
+									<input type="radio" name="C_12">
+									<span class="txt">pour</span>
+								</label>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="C_11" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>13</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeD">
+						<div class="question">
+							<p>Look at the picture and choose the words.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/C/13.jpg)"></span>
+							</div>
+						</div>
+						<div class="mq_cell">
+							<div class="q" style="text-align:center;">The girl is<span class="border"></span>the dog.</div>
+							<div class="answer">
+								<label class="inlineC">
+									<input type="radio" name="C_13">
+									<span class="txt">drawing</span>
+								</label>
+								<label class="inlineC">
+									<input type="radio" name="C_13">
+									<span class="txt">feeding</span>
+								</label>
+								<label class="inlineC">
+									<input type="radio" name="C_13">
+									<span class="txt">waiting</span>
+								</label>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="C_12" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>14</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeH">
+						<div class="question">
+							<p>Look at the picture and choose the words.</p>
+							<div class="txt_box">
+								<span>slide</span><span>bucket</span><span>tall</span><span>floor</span>
+							</div>
+						</div>
+						<div class="answer ipttxt">
+							<label>
+								The farmer has a <input type="text" name="C_14"> of milk. 
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_13" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>15</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeH">
+						<div class="question">
+							<p>Look at the picture and choose the words.</p>
+							<div class="txt_box">
+								<span>slide</span><span>bucket</span><span>tall</span><span>floor</span>
+							</div>
+						</div>
+						<div class="answer ipttxt">
+							<label>
+								Jane and Tom <input type="text" name="C_15"> down the hill. 
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_14" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>16</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeH">
+						<div class="question">
+							<p>Look at the picture and choose the words.</p>
+							<div class="txt_box">
+								<span>slide</span><span>bucket</span><span>tall</span><span>floor</span>
+							</div>
+						</div>
+						<div class="answer ipttxt">
+							<label>
+								The baby crawls on the <input type="text" name="C_16">. 
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_15" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>17</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeH">
+						<div class="question">
+							<p>Look at the picture and choose the words.</p>
+							<div class="txt_box">
+								<span>slide</span><span>bucket</span><span>tall</span><span>floor</span>
+							</div>
+						</div>
+						<div class="answer ipttxt">
+							<label>
+								A troll is <input type="text" name="C_17"> like a giraffe.
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_16" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>18~21</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Choose the correct answers.</p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">18</span>My mom and I<span class="border"></span>lots of fruit.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_18">
+										<span class="txt">buy</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_18">
+										<span class="txt">buies</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_18">
+										<span class="txt">buys</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">19</span>Gina<span class="border"></span>at my funny face.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_19">
+										<span class="txt">cleans</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_19">
+										<span class="txt">hides</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_19">
+										<span class="txt">giggles</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">20</span>It’s time to<span class="border"></span>.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_20">
+										<span class="txt">bed</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_20">
+										<span class="txt">go</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_20">
+										<span class="txt">going</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">21</span>We can<span class="border"></span>through the air.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_21">
+										<span class="txt">spreads</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_21">
+										<span class="txt">spread</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_21">
+										<span class="txt">flying</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_17" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>22~25</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Choose the correct answers.</p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">22</span>Do you have science class today?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="C_22">
+										<span class="txt">Yes, I am.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_22">
+										<span class="txt">No, I don’t.</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">23</span>What does Jack want to be?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="C_23">
+										<span class="txt">He likes soccer posters.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_23">
+										<span class="txt">He wants to be a firefighter.</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">24</span>Where do they eat lunch?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="C_24">
+										<span class="txt">They eat hamburgers and fries. </span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_24">
+										<span class="txt">They eat lunch in the park. </span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">25</span>How does my pet rabbit act?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="C_25">
+										<span class="txt">He is naughty.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_25">
+										<span class="txt">He is as big as my dog.</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="C_18" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>26</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage. Then choose the correct answer.</p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">26</span>What is my favorite animal?</div>
+								<div class="maintxt">
+									Can you guess my favorite animal? It has short legs.<br>
+									It doesn't have long ears. It walks very slowly.<br>
+									It can swim, but it can't jump.
+								</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="C_26">
+										<span class="txt">It’s a turtle.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_26">
+										<span class="txt">It’s a zebra.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="C_26">
+										<span class="txt">It’s a kangaroo.</span>
+									</label>
+								</div>
+							</div>
+							
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				
+				<div id="C_19" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>27~28</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage. Then choose the correct answer. </p>
+							<div class="maintxt">
+								Fred has fun at the ___________________.<br>
+								He walks to the vegetable stall. <br>
+								“Do you have meat?” he asks. <br>
+								① “I don’t sell meat,” the man says. Fred smiles. <br>
+								② The young lady says, “I sell fruit—only fruit! What do you want?”<br>
+								③ Fred sighs. Fred’s fun is over.
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">27</span>Choose the correct word to fill in the blank</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_27">
+										<span class="txt">beach</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_27">
+										<span class="txt">restaurant</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_27">
+										<span class="txt">market</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">28</span>Where does this sentence best fit?</div>
+								<div class="maintxt">
+									Now Fred is at the fruit stall. 
+								</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_28">
+										<span class="txt">①</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_28">
+										<span class="txt">②</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_28">
+										<span class="txt">③</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="C_20" class="test_wrap">
+					<h2>LEVEL TEST 3
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>29~30</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage. Then choose the correct answers.</p>
+							<div class="maintxt">
+								Long ago, there were ten suns in China. These suns lived in a giant tree. <br>
+								Each day, a different sun went across the sky. But the suns did not want to wait. <br>
+								One day they all went across the sky together. It was very, very hot on the earth. <br>
+								The father of the ten suns was not happy. He tried to stop them. <br>
+								But they did not listen to him. So he said to an archer, “Please scare the suns.” 
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">29</span>Who did the father get to scare the suns?</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_29">
+										<span class="txt">an archer</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_29">
+										<span class="txt">an artist</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_29">
+										<span class="txt">an astronaut</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">30</span>What happened when all the suns went across?</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="C_30">
+										<span class="txt">It became cold.</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_30">
+										<span class="txt">It became hot.</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="C_30">
+										<span class="txt">It started to rain.</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next last"><span>NEXT</span></a>
+					</div>
+				</div>
+					
+				<div id="C_last" class="test_last">
+					<h1>LEVEL 3 테스트 결과</h1>
+					<p>모든 테스트가 끝났습니다. 아래 버튼을 눌러 결과를 확인하시기 바랍니다. </p>
+					<a href="#" class="btn_result"><span>확인</span></a>
+				</div>
+			</div>
+
+			<div id="qD">
+				<div id="D_1" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>1</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeA">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/D/L1.jpg)"></span>
+							</div>
+							<a href="#" class="btn_sound" title="D-1.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineB">
+								<input type="radio" name="D_1">
+								<span class="txt">(A)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="D_1">
+								<span class="txt">(B)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="D_1">
+								<span class="txt">(C)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="D_1">
+								<span class="txt">(D)</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="D_2" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>2</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeA">
+						<div class="question">
+							<p>Listen and choose the correct picture.</p>
+							<div class="img">
+								<span style="background-image:url(http://www.ebricks.co.kr/leveltest/images/test_img/D/L2.jpg)"></span>
+							</div>
+							<a href="#" class="btn_sound" title="D-2.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineB">
+								<input type="radio" name="D_2">
+								<span class="txt">(A)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="D_2">
+								<span class="txt">(B)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="D_2">
+								<span class="txt">(C)</span>
+							</label>
+							<label class="inlineB">
+								<input type="radio" name="D_2">
+								<span class="txt">(D)</span>
+							</label>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_3" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>3~4</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeG">
+						<div class="question">
+							<p>Listen and check the best response. </p>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">3</span></div>
+								<a href="#" class="btn_sound" title="D-3.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="D_3">
+										<span class="txt">(A)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_3">
+										<span class="txt">(B)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_3">
+										<span class="txt">(C)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_3">
+										<span class="txt">(D)</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">4</span></div>
+								<a href="#" class="btn_sound" title="D-4.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="D_4">
+										<span class="txt">(A)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_4">
+										<span class="txt">(B)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_4">
+										<span class="txt">(C)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_4">
+										<span class="txt">(D)</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="D_4" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>5</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen to the dialogue and choose the correct answer.</p>
+							<p class="innerq">What is the woman going to do?</p>
+							<a href="#" class="btn_sound" title="D-5.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							
+							<label class="inlineD">
+								<input type="radio" name="D_5">
+								<span class="txt">She is going to buy a TV magazine.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_5">
+								<span class="txt">She is going to watch a TV show.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_5">
+								<span class="txt">She is going to fix her TV.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_5">
+								<span class="txt">She is going to buy a new TV.</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_5" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>6</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen to the dialogue and choose the correct answer.</p>
+							<p class="innerq">What is the girl talking about?</p>
+							<a href="#" class="btn_sound" title="D-6.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							
+							<label class="inlineD">
+								<input type="radio" name="D_6">
+								<span class="txt">How she made many mistakes</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_6">
+								<span class="txt">How she made a lot of progress in English</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_6">
+								<span class="txt">How she took a math test</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_6">
+								<span class="txt">How she remembered everything for the tests</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_6" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>7</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct answer.</p>
+							<p class="innerq">Why is the woman calling the man?</p>
+							<a href="#" class="btn_sound" title="D-7.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							
+							<label class="inlineD">
+								<input type="radio" name="D_7">
+								<span class="txt">to tell him to pick up the mug</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_7">
+								<span class="txt">to tell him that a mug is on sale</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_7">
+								<span class="txt">to tell him about her father’s mug</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_7">
+								<span class="txt">to tell him that she has a mug collection</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_7" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>8</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and choose the correct answer.</p>
+							<p class="innerq">What is the girl most likely to do after the conversation?</p>
+							<a href="#" class="btn_sound" title="D-8.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							
+							<label class="inlineD">
+								<input type="radio" name="D_8">
+								<span class="txt">to buy a small white dog</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_8">
+								<span class="txt">to buy a pet cat for the boy</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_8">
+								<span class="txt">to go to a pet shop with her mom</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="D_8">
+								<span class="txt">to buy a pet dog at the new pet shop</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_8" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>9~10</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="question">
+							<p>Listen and answer the question.</p>
+							<a href="#" class="btn_sound" title="D-9-10.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">9</span>What isn’t the speaker good at?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_9">
+										<span class="txt">cooking</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_9">
+										<span class="txt">taking care of kids</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_9">
+										<span class="txt">teaching someone</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_9">
+										<span class="txt">singing</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">10</span>What does the speaker think about being a pilot?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_10">
+										<span class="txt">He thinks it’s interesting.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_10">
+										<span class="txt">He thinks it’s boring.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_10">
+										<span class="txt">He thinks it’s dangerous.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_10">
+										<span class="txt">He thinks it’s safe.</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_9" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>11~14</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeI">
+						<div class="question">
+							<p>Look at the picture and choose the words.</p>
+							<div class="txt_box">
+								<span>observant</span><span>beat</span><span>grow up</span><span>excitedly</span><span>win</span>
+							</div>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">11</span></div>
+								<div class="answer ipttxt">
+									<label>
+										Kit dances <input type="text" name="D_11"> to the fun song. 
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">12</span></div>
+								<div class="answer ipttxt">
+									<label>
+										I will be a doctor when I <input type="text" name="D_12">. 
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">13</span></div>
+								<div class="answer ipttxt">
+									<label>
+										An owl is very <input type="text" name="D_13">. 
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">14</span></div>
+								<div class="answer ipttxt">
+									<label>
+										My team will <input type="text" name="D_14"> Jeremy’s team in the race. 
+									</label>
+								</div>
+							</div>
+
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_10" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>15~18</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Choose the correct answers.</p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">15</span>The train slowly<span class="border"></span>up the hill.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="D_15">
+										<span class="txt">blows</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_15">
+										<span class="txt">goes</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_15">
+										<span class="txt">climbs</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">16</span>The hungry lion<span class="border"></span>the deer.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="D_16">
+										<span class="txt">wakes up</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_16">
+										<span class="txt">runs after</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_16">
+										<span class="txt">laughs at</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">17</span>I can’t solve this question. I<span class="border"></span>.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="D_17">
+										<span class="txt">pick up</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_17">
+										<span class="txt">give up</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_17">
+										<span class="txt">come back</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">18</span>It was a nice day, so we<span class="border"></span>around the park.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="D_18">
+										<span class="txt">strolled</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_18">
+										<span class="txt">stocked</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="D_18">
+										<span class="txt">removed</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_11" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>19~22</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF noq">
+						<div class="multy_question">
+							<p>Choose the correct sentences.</p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">19</span></div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_19">
+										<span class="txt">They go swimming yesterday.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_19">
+										<span class="txt">They often go swimming.</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">20</span></div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_20">
+										<span class="txt">I want to do an architect some day.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_20">
+										<span class="txt">I want to be an astronaut when I grow up.</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">21</span></div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_21">
+										<span class="txt">The cheetah is faster than the tiger.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_21">
+										<span class="txt">Which one is the smaller among the three pigs?</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">22</span></div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_22">
+										<span class="txt">We has baked some cookies on Tuesdays.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_22">
+										<span class="txt">Have you ever been to the National Museum?.</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_12" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>23~24</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeI inword">
+						<div class="question">
+							<p>Unscramble and make a sentence.</p>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">23</span></div>
+								<div class="txt_box noline">
+									<span>a</span><span>big<i>,</i></span><span>short</span><span>Hamster</span><span>eyes</span><span>very</span><span>and</span><span>tail</span><span>has</span><span>dark</span>
+								</div>
+								<div class="answer ipttxt">
+									<label>
+										<input type="text" name="D_23"> . 
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">24</span></div>
+								<div class="txt_box noline">
+									<span>weight</span><span>the</span><span>about</span><span>a</span><span>of</span><span>normal</span><span>That's</span><span>half</span><span>car</span>
+								</div>
+								<div class="answer ipttxt">
+									<label>
+										<input type="text" name="D_24"> !
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="D_13" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>25~26</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeI inword">
+						<div class="question">
+							<p>Unscramble and make a sentence.</p>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">25</span></div>
+								<div class="txt_box noline">
+									<span>had to</span><span>how</span><span>to design our book</span><span>We</span><span>decide</span><span>we were</span><span>going</span>
+								</div>
+								<div class="answer ipttxt">
+									<label>
+										<input type="text" name="D_25"> . 
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">26</span></div>
+								<div class="txt_box noline">
+									<span>tales</span><span>life</span><span>authors</span><span>from</span><span>Some</span><span>their</span><span>create</span><span>experiences</span><span>own</span>
+								</div>
+								<div class="answer ipttxt">
+									<label>
+										<input type="text" name="D_26"> .
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+			
+				<div id="D_14" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>27~28</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage and choose the correct answers.</p>
+							<div class="maintxt">
+								When you find a good book or movie, recommend it to your friends. It is a good chance for you to say what you think about it. You can also listen to what your friends think about it. It’s good for meaningful conversations. The more you share, the richer your friendships can become.
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">27</span>What is the passage mainly about?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_27">
+										<span class="txt">sharing feelings</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_27">
+										<span class="txt">helping others</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_27">
+										<span class="txt">encouraging others</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">28</span>What is good for meaningful conversations?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_28">
+										<span class="txt">playing sports with others</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_28">
+										<span class="txt">listening to others</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_28">
+										<span class="txt">saying “No” to others</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="D_15" class="test_wrap">
+					<h2>LEVEL TEST 4
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>29~30</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage and choose the correct answers.</p>
+							<div class="maintxt">
+								I have an unusual job. I take care of dogs during the day. My main duties are feeding them, taking them for walks, and bathing them. I play with them so they won’t feel lonely. It’s a lot of fun! I take care of various types of dogs. It doesn’t matter if they are big or small. I can take good care of them! Is your pet dog alone at home during the day? Then call a dog sitter for your furry friend!
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">29</span>What is the writer’s job?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_29">
+										<span class="txt">a babysitter</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_29">
+										<span class="txt">a vet</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_29">
+										<span class="txt">a dog sitter</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_29">
+										<span class="txt">a cook</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">30</span>What can be inferred from the passage?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="D_30">
+										<span class="txt">The writer wants to get a different job.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_30">
+										<span class="txt">The writer doesn’t know what she is doing.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_30">
+										<span class="txt">The dogs don’t like new dog sitters.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="D_30">
+										<span class="txt">The dog owners are not at home during the day.</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next last"><span>NEXT</span></a>
+					</div>
+				</div>
+					
+				<div id="D_last" class="test_last">
+					<h1>LEVEL 4 테스트 결과</h1>
+					<p>모든 테스트가 끝났습니다. 아래 버튼을 눌러 결과를 확인하시기 바랍니다. </p>
+					<a href="#" class="btn_result"><span>확인</span></a>
+				</div>
+			</div>
+
+			<div id="qE">
+				<div id="E_1" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>1~2</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeG">
+						<div class="question">
+							<p>Listen and choose the best response.</p>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">1</span></div>
+								<a href="#" class="btn_sound" title="E-1.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="E_1">
+										<span class="txt">(A)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_1">
+										<span class="txt">(B)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_1">
+										<span class="txt">(C)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_1">
+										<span class="txt">(D)</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">2</span></div>
+								<a href="#" class="btn_sound" title="E-2.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="E_2">
+										<span class="txt">(A)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_2">
+										<span class="txt">(B)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_2">
+										<span class="txt">(C)</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_2">
+										<span class="txt">(D)</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="E_2" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>3</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and answer the question.</p>
+							<p class="innerq">What are they talking about?</p>
+							<a href="#" class="btn_sound" title="E-3.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineD">
+								<input type="radio" name="E_3">
+								<span class="txt">How to learn English in the USA</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_3">
+								<span class="txt">Different languages that they can speak</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_3">
+								<span class="txt">The easiest way to learn a new language</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_3">
+								<span class="txt">The most important language in their lives</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_3" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>4</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and answer the question.</p>
+							<p class="innerq">What are they mainly talking about?</p>
+							<a href="#" class="btn_sound" title="E-4.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineD">
+								<input type="radio" name="E_4">
+								<span class="txt">Car-driving limited</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_4">
+								<span class="txt">Obeying traffic regulations</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_4">
+								<span class="txt">Environmental groups support</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_4">
+								<span class="txt">Participating in community services</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_4" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>5</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and answer the question.</p>
+							<p class="innerq">Which statement is true according to the conversation? </p>
+							<a href="#" class="btn_sound" title="E-5.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineD">
+								<input type="radio" name="E_5">
+								<span class="txt">She takes care of his dog.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_5">
+								<span class="txt">He walks his dog every day.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_5">
+								<span class="txt">He hasn’t yet taken his dog to a vet.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_5">
+								<span class="txt">She suggests he give his dog some different food.</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_5" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>6</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeC">
+						<div class="question">
+							<p>Listen and answer the question.</p>
+							<p class="innerq">Which statement is NOT true about the woman?</p>
+							<a href="#" class="btn_sound" title="E-6.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="answer">
+							<label class="inlineD">
+								<input type="radio" name="E_6">
+								<span class="txt">She’d like to get a refund.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_6">
+								<span class="txt">Her shoes she bought don’t fit.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_6">
+								<span class="txt">She bought her shoes yesterday.</span>
+							</label>
+							<label class="inlineD">
+								<input type="radio" name="E_6">
+								<span class="txt">She’d like to exchange the shoes for larger ones.</span>
+							</label>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_6" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>7~8</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="question">
+							<p>Listen and choose the correct answer.</p>
+							<a href="#" class="btn_sound" title="E-7-8.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">7</span>What is the best topic of the talk?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_7">
+										<span class="txt">duties of flight attendants</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_7">
+										<span class="txt">qualifications of flight attendants</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_7">
+										<span class="txt">flight safety</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_7">
+										<span class="txt">preparation for flight emergency</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">8</span>What is checked by flight attendants before the flight?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_8">
+										<span class="txt">weather conditions</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_8">
+										<span class="txt">the length of the flight</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_8">
+										<span class="txt">emergency equipment</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_8">
+										<span class="txt">seat belts</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+				
+				<div id="E_7" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort listening" >LISTENING</span>
+							<div class="paging"><span>9~10</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="question">
+							<p>Listen to the dialog and choose the correct answer.</p>
+							<a href="#" class="btn_sound" title="E-9-10.mp3"><img src="http://www.ebricks.co.kr/leveltest/images/btn_sound.png" alt="다시 듣기"></a>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">9</span>What is not a feature of the author the speakers are talking about?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_9">
+										<span class="txt">“Sleeping Murder” is one of her books.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_9">
+										<span class="txt">She is a British writer.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_9">
+										<span class="txt">She is the owner of a library.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_9">
+										<span class="txt">Her books sold more than billion copies.</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">10</span>What do you think the female speaker will do next?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_10">
+										<span class="txt">She will read a magazine.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_10">
+										<span class="txt">She will see a detective movie.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_10">
+										<span class="txt">She will read mystery comics.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_10">
+										<span class="txt">She will go to the public library to read the book.</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_8" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>11~14</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeI">
+						<div class="question">
+							<p>Choose and write the correct words.</p>
+							<div class="txt_box">
+								<span>describe</span><span>repeat</span><span>positive</span><span>contribution</span><span>unveiled</span>
+							</div>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">11</span></div>
+								<div class="answer ipttxt">
+									<label>
+										What are three <input type="text" name="E_11"> things about the rain?
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">12</span></div>
+								<div class="answer ipttxt">
+									<label>
+										The painting was <input type="text" name="E_12"> at the gallery. 
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">13</span></div>
+								<div class="answer ipttxt">
+									<label>
+										Your <input type="text" name="E_13"> has helped the flood victims. Thank you.
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">14</span></div>
+								<div class="answer ipttxt">
+									<label>
+										When teachers <input type="text" name="E_14"> the scene of the movie, their students draw it. 
+									</label>
+								</div>
+							</div>
+
+						</div>
+						
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_9" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>15~18</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Choose the correct answers.</p>
+							<div class="mq_cell">
+								<div class="q"><span class="num">15</span>I like fruits,<span class="border"></span>peaches.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="E_15">
+										<span class="txt">include</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_15">
+										<span class="txt">including</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_15">
+										<span class="txt">included</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_15">
+										<span class="txt">includes</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">16</span><span class="border"></span>you be quiet? I’m trying to read here.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="E_16">
+										<span class="txt">Don’t</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_16">
+										<span class="txt">Aren’t</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_16">
+										<span class="txt">Won’t</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_16">
+										<span class="txt">Weren’t</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">17</span>Before I knew it, it<span class="border"></span>a big problem.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="E_17">
+										<span class="txt">became</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_17">
+										<span class="txt">will become</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_17">
+										<span class="txt">had become</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_17">
+										<span class="txt">was become</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">18</span>I<span class="border"></span> the piano for ten years next year.</div>
+								<div class="answer">
+									<label class="inlineB">
+										<input type="radio" name="E_18">
+										<span class="txt">will play</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_18">
+										<span class="txt">play</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_18">
+										<span class="txt">played</span>
+									</label>
+									<label class="inlineB">
+										<input type="radio" name="E_18">
+										<span class="txt">will have played</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_10" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort reading">READING</span>
+							<div class="paging"><span>19~22</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeI">
+						<div class="question">
+							<p>Write the correct form of the given words to complete the sentences.</p>
+						</div>
+						<div class="multy_question">
+							<div class="mq_cell">
+								<div class="q"><span class="num">19</span></div>
+								<div class="answer ipttxt">
+									<label>
+										She spent too much money <input type="text" name="E_19"> several clothes. (buy)
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">20</span></div>
+								<div class="answer ipttxt">
+									<label>
+										I can’t help you. You have to do it <input type="text" name="E_20"> . (you)
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">21</span></div>
+								<div class="answer ipttxt">
+									<label>
+										When Joey was young, he  <input type="text" name="E_21"> by his nickname. (call)
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">22</span></div>
+								<div class="answer ipttxt">
+									<label>
+										I should <input type="text" name="E_22"> the report yesterday, but I didn’t. (write)
+									</label>
+								</div>
+							</div>
+
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_11" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>23~25</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage and choose the correct answers.</p>
+							<div class="maintxt">
+								Good morning, students. Today, we’ll learn about Kwanzaa.<br>
+								Kwanzaa is a holiday for African Americans. It begins the day after Christmas and lasts for seven days. On this day, people wear traditional African clothes. They are very colorful. People also prepare many gifts. Children generally receive books or toys from adults. <br>
+								During the seven days of Kwanzaa, people decorate their houses with fresh fruit. Fresh fruit means a perfect world. Also, people light a candle every day. Black, green, and red candles are put into a special candle holder called a Kinara. <br>
+								Every candle has its own meaning. After a five-minute break, let’s talk about the seven candles.
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">23</span>What do people do during Kwanzaa?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_23">
+										<span class="txt">Children give books to adults.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_23">
+										<span class="txt">They light candles during the seven days.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_23">
+										<span class="txt">They make a black and green candle holder.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_23">
+										<span class="txt">Children generally make toys with candles.</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">24</span>What is NOT correct about Kwanzaa?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_24">
+										<span class="txt">It’s an African-American holiday.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_24">
+										<span class="txt">It is a seven-day long holiday.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_24">
+										<span class="txt">People decorate their houses with colorful clothes.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_24">
+										<span class="txt">Fresh fruit means a perfect holiday.</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">25</span>What can be inferred from the passage?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_25">
+										<span class="txt">The speaker will talk about traditional African clothes next.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_25">
+										<span class="txt">The speaker will talk about the meanings of the seven candles next.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_25">
+										<span class="txt">The speaker will talk about the colors of the candles next.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_25">
+										<span class="txt">The speaker will talk about the fresh fruits used for Kwanzaa.</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_12" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>26~27</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage. Then choose the correct answers.</p>
+							<div class="maintxt">
+								Seemingly, the arrangement of the stars and the pyramids is nearly identical. Two pyramids match the position of the leftbelt star and the middle-belt star, respectively. The other one is related to the right-belt star. Interestingly, neither the pyramids nor the stars in Orion’s Belt are positioned in a straight line. Instead, one pyramid (Menkaure) and one star (Mintaka) are both a little out of line.<br>
+								Moreover, the relative sizes of the pyramids and the brightness of the stars mimic each other. The two larger pyramids match the positions of the two brightest stars in Orion’s Belt. The smallest pyramid matches the least bright star. Believers in the Orion correlation theory argue that these details are significant and intentional.<br>
+								These believers insist that the ancient Egyptians held a strong belief in an afterlife. The Egyptians believed that once the dead pharaoh became reunited with the stars, he would live eternally. They mirrored the positions of the stars so that deceased pharaohs could have a clear path to them.
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">26</span>According to the passage, which of the following is NOT true?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_26">
+										<span class="txt">The smallest pyramid represents the least bright star.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_26">
+										<span class="txt">Stars in Orion’s Belt are straight.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_26">
+										<span class="txt">Egyptians believed in an afterlife.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_26">
+										<span class="txt">The stars in Orion’s Belt have different brightness.</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">27</span>Why did the ancient Egyptians mirror the positions of the stars and the pyramids?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_27">
+										<span class="txt">To make the pyramids shine bright at night under the stars.</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_27">
+										<span class="txt">To let the deceased pharaohs have a clear path to afterlives. </span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_27">
+										<span class="txt">To prove that there is an afterlife to other people</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_27">
+										<span class="txt">To make the pyramids look bigger under the stars</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next"><span>NEXT</span></a>
+					</div>
+				</div>
+
+				<div id="E_13" class="test_wrap">
+					<h2>LEVEL TEST 5
+						<div class="testinfo">
+							<span class="sort reading" >READING</span>
+							<div class="paging"><span>28~30</span>/30</div>
+						</div>
+					</h2>
+					<div class="test_contents typeF">
+						<div class="multy_question">
+							<p>Read the passage and choose the correct answers.</p>
+							<div class="maintxt">
+								Saving someone at risk of a sudden cardiac arrest, also known as a heart attack, is less fatal if you stand by ready to perform hands-only *cardiopulmonary resuscitation (CPR). All you need to do is press down on the chest to the beat of the Bee Gees’ disco classic “Stayin’ Alive.” The principle of hands-only CPR is simple. The heart is the muscle responsible for pumping essential materials to every cell in the body. If the heart ceases to beat suddenly, it desperately needs regular outside pressure that_______________. Manually pushing with one’s hands is the best and easiest way to get the heart pumping again.
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">28</span>What is the passage about?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_28">
+										<span class="txt">Which material is essential to every cell</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_28">
+										<span class="txt">Why the beat of the Bee Gees’ disco is important</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_28">
+										<span class="txt">How to do hands-only CPR to help a heart attack victim</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_28">
+										<span class="txt">How to prevent sudden heart attack</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">29</span>Which one best fit in the blank?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_29">
+										<span class="txt">copies the heartbeat</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_29">
+										<span class="txt">delivers CPR properly</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_29">
+										<span class="txt">ceases the heart</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_29">
+										<span class="txt">needs well-prepared experts</span>
+									</label>
+								</div>
+							</div>
+							<div class="mq_cell">
+								<div class="q"><span class="num">30</span>What is the best way to help the heart pump again?</div>
+								<div class="answer">
+									<label class="inlineD">
+										<input type="radio" name="E_30">
+										<span class="txt">Calling for emergency authorities</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_30">
+										<span class="txt">Using the emergency first aid kit at the scene</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_30">
+										<span class="txt">Pushing with your hands manually</span>
+									</label>
+									<label class="inlineD">
+										<input type="radio" name="E_30">
+										<span class="txt">Pressing down on the chest using external defibrillators</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn_next last"><span>NEXT</span></a>
+					</div>
+				</div>
+					
+				<div id="E_last" class="test_last">
+					<h1>LEVEL 5 테스트 결과</h1>
+					<p>모든 테스트가 끝났습니다. 아래 버튼을 눌러 결과를 확인하시기 바랍니다. </p>
+					<a href="#" class="btn_result"><span>확인</span></a>
+				</div>
+			</div>
+            <div id="print_div">
+				<div id="result" class="leveltest_view">
+					<h5>Eduson <span id="step">LEVEL TEST 1. (~1년)</span> Report</h5>
+					<p class="toptxt">Date of Test : <span class="date"></span></p>
+					<div class="test_sec">
+						<div class="tit">Recommended Level</div>
+						<div class="graph">
+							<div class="img imga"><img src="http://www.ebricks.co.kr/leveltest/images/resulta.png" alt=""></div>
+							<div class="img imgb"><img src="http://www.ebricks.co.kr/leveltest/images/resultb.png" alt=""></div>
+							<div class="img imgc"><img src="http://www.ebricks.co.kr/leveltest/images/resultc.png" alt=""></div>
+							<p class="score">Your Score is <span class="scoreT">0</span></p>
+						</div>
+					</div>
+					<div class="test_sec">
+						<div class="tit">Score By Category</div>
+						<div class="tb tb_default">
+							<table>
+								<colgroup>
+									<col width="25%">
+									<col width="25%">
+									<col width="25%">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th class="line">SKILL</th>
+										<th class="line">SCORE</th>
+										<th class="line">OVERALL SCORE</th>
+										<th class="">LEVEL</th>
+									</tr>	
+									<tr>
+										<td class="line">Listening</td>
+										<td class="line"><span class="scoreL">0</span>/100</td>
+										<td class="line rowdata" rowspan="2"><span class="scoreT">0</span></td>
+										<td class="rowdata" rowspan="2"><span class="crtLevel">0</span></td>
+									</tr>
+									<tr>
+										<td class="line">Reading</td>
+										<td class="line"><span class="scoreR">0</span>/100</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+					</div>
+
+                    <input type="hidden" id="comment_idx">
+					<div class="test_sec comment_wrap">
+						<div class="tit">COMMENT</div>
+						<div class="comment">
+							<textarea id="comment_data"></textarea>
+							<div id="printhelper"></div>
+						</div>
+					</div>
+
+					<h1 class = "ui dividing header">
+						📕 내 결과를 등록합니다
+						<div class="sub header mt-2">에듀슨 수강 신청을 위해 필요한 정보입니다.</div>
+					</h1>
+					<form action="/level" method="post">
+
+					<div class="ui form">
+						<div class="three fields">
+						  <div class="field">
+							<label>이름</label>
+							<input type="text" placeholder="이름" autofocus  name="name" value="<%= model.name %>" >
+						  </div>
+						  <div class="field">
+							<label>전화번호</label>
+							<input type="text" placeholder="010-1234-5678" name="phone" value="<%= model.name %>">
+						  </div>
+						  <div class="field">
+							<label>에듀슨잉글리쉬 아이디</label>
+							<input type="text" placeholder="hellopapa" name = 'eduson_id' id = "eduson_id" value = ''>
+
+						  </div>
+						</div>
+					  </div>
+				
+					 
+					  <input type="text" placeholder="" id = "TestType" name = 'TestType' class = "d-none">
+						<input type="text" placeholder="" id = "Date" name = 'Date' class = "d-none">
+						<input type="text" placeholder="" id = "score" name = 'score' class = "d-none">
+
+				  
+						<div class="btn_wrap">
+					  <input type="submit" value="등록" class="ui button" onclick = "complete()"  style = "display: inline-block"/>
+					  <a href="javascript:printdiv();"  class="ui red button"><span>출력</span></a>
+					  <div id = "next_level" class = "mt-2"></div>
+					</form>
+
+			
+						<!-- <a href="javascript:comment_save();" class="btn_solid btn_save" style="display: none;"><span>저장</span></a> -->
+					
+						
+				
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
